@@ -1,0 +1,19 @@
+name: Delete Feature Branch
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - develop
+
+jobs:
+  delete-branch:
+    if: ${{ github.event.pull_request.merged == true }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete branch
+        run: |
+          BRANCH_NAME=${{ github.event.pull_request.head.ref }}
+          if [[ $BRANCH_NAME == features/* ]]; then
+            git push origin --delete $BRANCH_NAME
+          fi
