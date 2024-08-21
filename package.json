@@ -1,0 +1,14 @@
+{
+  "name": "workflows-exo6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Run tests here\"",
+    "test:coverage": "echo \"Run tests with coverage here\"",
+    "build": "mkdir -p dist && cp src/index.js dist/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
